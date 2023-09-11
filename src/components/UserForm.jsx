@@ -8,6 +8,7 @@ export class UserForm extends Component {
             name: '',
             pais: '',
             email: '',
+            telefono: '',
         }
     }
 
@@ -23,7 +24,7 @@ export class UserForm extends Component {
     }
 
   render() {
-    const {name, pais, email} = this.props.user
+    const {name, pais, email, telefono} = this.props.user
     return (
 <div>
 <div className='title-form'>Nuevo Usuario</div>
@@ -39,6 +40,10 @@ export class UserForm extends Component {
         <div>
             <label htmlFor="">Correo Electrónico </label>
             <input type="text" name="email" onChange={this.props.onChange} value={email}/>
+        </div>
+        <div>
+        <label htmlFor=""> Teléfono </label>
+            <input type="text" name="telefono" onChange={this.props.onChange} value={telefono}/>
         </div>
         <button>Agregar</button>
       </form>

@@ -1,11 +1,10 @@
 import React from "react";
 import "./styles/ItemUser.css";
 
-
 export default class ItemUser extends React.Component {
   state = {};
   render() {
-    const {name, pais, email} = this.props.user;
+    const { name, pais, email, telefono } = this.props.user;
     return (
       <div className="details">
         <p>
@@ -17,6 +16,11 @@ export default class ItemUser extends React.Component {
         <p>
           <strong>Correo: {email}</strong>
         </p>
+        {telefono && (
+          <p>
+            <strong>Teléfono: {telefono}</strong>
+          </p>
+        )}
         {this.props.enableButton && <button> Haz Clic </button>}
       </div>
     );

@@ -12,6 +12,7 @@ export class App extends Component {
       name: "",
       pais: "",
       email: "",
+      telefono: "",
     };
   }
 
