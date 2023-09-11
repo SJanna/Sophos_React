@@ -3,17 +3,15 @@ import Title from "./Title";
 import ItemUser from "./ItemUser";
 // import UserCount from "./UserCount";
 import UserForm from "./UserForm";
+import userList from "../data";
 
 export class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-      pais: "",
-      email: "",
-      telefono: "",
-    };
+      users:userList,
+    }
   }
 
   handleChange = (e) => {
@@ -26,7 +24,9 @@ export class App extends Component {
     return (
       <>
         <Title text="Lista de Usuarios" />
-        <ItemUser user={this.state} enableButton={true}/>
+        {this.state.users.map((user, index) => (
+          <ItemUser key={index} user={user}/>
+        ))}
         <UserForm onChange={this.handleChange} user={this.state}/>
       </>
     );
