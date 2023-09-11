@@ -4,7 +4,7 @@ import ItemUser from "./ItemUser";
 // import UserCount from "./UserCount";
 import UserForm from "./UserForm";
 import userList from "../data";
-import { Button, Box, ButtonGroup } from "@mui/material";
+import { Button, Box, ButtonGroup, Switch } from "@mui/material";
 
 export class App extends Component {
   constructor(props) {
@@ -42,6 +42,7 @@ export class App extends Component {
             <Button color="primary">Anterior</Button>
             <Button color="primary">Siguiente</Button>
           </ButtonGroup>
+          <Switch></Switch>
         </Box>
       </>
     );
