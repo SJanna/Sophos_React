@@ -2,15 +2,6 @@ import React, { Component } from 'react'
 import './styles/UserForm.css'
 
 export class UserForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: '',
-            pais: '',
-            email: '',
-            telefono: '',
-        }
-    }
 
     handleChange = (e) => {
         this.setState({    

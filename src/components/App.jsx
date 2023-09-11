@@ -24,9 +24,9 @@ export class App extends Component {
     return (
       <>
         <Title text="Lista de Usuarios" />
-        {this.state.users.map((user, index) => (
+        {/* {this.state.users.map((user, index) => (
           <ItemUser key={index} user={user}/>
-        ))}
+        ))} */}
         <UserForm onChange={this.handleChange} user={this.state}/>
       </>
     );
