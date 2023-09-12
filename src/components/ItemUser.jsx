@@ -1,28 +1,33 @@
 import React from "react";
 import "./styles/ItemUser.css";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 export default class ItemUser extends React.Component {
   state = {};
   render() {
     const { nombre, pais, email, telefono } = this.props.user;
     return (
-      <div className="details">
-        <p>
+      <Card>
+        <CardMedia component="img" img="/image.png" title="Imagen de usuario"/>
+        <CardContent>
+        <Typography variant="h5">
           <strong>Nombre: {nombre}</strong>
-        </p>
-        <p>
+        </Typography>
+        <Typography variant="h5">
           <strong>Pais: {pais}</strong>
-        </p>
-        <p>
+        </Typography>
+        <Typography variant="h5">
           <strong>Correo: {email}</strong>
-        </p>
+        </Typography >
         {telefono && (
-          <p>
+          <Typography variant="h5">
             <strong>Teléfono: {telefono}</strong>
-          </p>
+          </Typography>
         )}
+        </CardContent>
+
         {this.props.enableButton && <button> Haz Clic </button>}
-      </div>
+      </Card>
     );
   }
 }
