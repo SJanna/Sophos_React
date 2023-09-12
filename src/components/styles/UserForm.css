@@ -7,8 +7,12 @@
 
 .form {
   margin: 8px auto;
-  max-width: 30%;
+  max-width: 70%;
   padding: 12px;
+  border-radius: 5px;
+  border: solid 1px #323232;
+  background-color: #f5f5f5;
+  padding: 15px;
 }
 
 .input-form {

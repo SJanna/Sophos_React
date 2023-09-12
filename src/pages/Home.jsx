@@ -1,9 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import ItemUser from "../components/ItemUser";
 import Title from "../components/Title";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const data = {
   nombre: "Shalem",
@@ -12,27 +10,17 @@ const data = {
   telefono: "3014072140",
 };
 
-const headerStyles = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    height: "100vh",
-    }
-
 const containerStyles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     margin : "24px 8px",
-    height: "100%",
+    height: "70vh",
 }
 
 const Home = () => {
   return (
-    <Box sx={headerStyles}>
-      <Header />
-      <Container maxWidth="md" sx={containerStyles}>
+    <Box sx={containerStyles}>
       <Title text="Bienvenido a User Random" />
       <ItemUser user={data} />
       <Typography variant="body2" align="center">
@@ -41,8 +29,6 @@ const Home = () => {
         magni dolorem esse velit reprehenderit tenetur, doloremque molestiae?
         Perferendis?
       </Typography>
-        </Container>
-      <Footer />
     </Box>
   );
 };

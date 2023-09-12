@@ -25,12 +25,10 @@ export class Form extends Component {
   render() {
     return (
       <>
-        <Header />
         <Title text="Ingresa tu propio usuario" />
         <ItemUser user={this.state}/>
         <br />
         <UserForm onChange={this.handleChange} user={this.state}/>
-        <Footer />
       </>
     );
   }
