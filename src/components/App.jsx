@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Form from "../pages/Form";
 import Layout from "../layout/Layout";
 import List from "../pages/List";
+import User from "../pages/User";
 import {
   createBrowserRouter,
   Link,
@@ -28,6 +29,7 @@ function Root() {
           <Route path="/" element={<Home />} />
           <Route path="form" element={<Form />} />
           <Route path="list" element={<List />} />
+          <Route path="/user/:id" element={<User/>} />
       </Route>
       </Routes>
       </ThemeProvider>

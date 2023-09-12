@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar,IconButton, Container, Link } from '@mui/material'
 import {Link as RouterLink} from 'react-router-dom'
-
+import Logo from '../img/logo512.png'
 const menuStyles = {
     display: 'flex',
     justifyContent: 'space-evenly'
@@ -13,7 +13,7 @@ const Header = () => {
         <Container maxWidth="lg">
         <Toolbar sx={menuStyles}> 
             <IconButton edge="start">
-                <img height='30px' src='logo512.png' alt='logo'/>
+                <img height='30px' src={Logo} alt='logo'/>
             </IconButton>
             <Link component={RouterLink} to="/" color='inherit'>
                 Inicio
