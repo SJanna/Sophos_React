@@ -1,9 +1,14 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './styles/UserCount.css'
 
 const UserCountHook = () => {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    console.log('useEffect');
+    document.title = `Contador: ${count}`
+  },[count])
 
   const handleAdd =()=>{
     setCount(count + 1)
