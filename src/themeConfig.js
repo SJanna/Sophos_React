@@ -7,8 +7,8 @@ const themeConfig = createTheme({
             main: "#5c6bc0",
         },
         secondary: {
-            // Amarillo
-            main: "#fdd835",
+            // Amarillo oscuro
+            main: "#fbc02d",
         },
     },
     typography: {

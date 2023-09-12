@@ -8,6 +8,7 @@ import { Button, Box, ButtonGroup, Switch } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import theme from "../themeConfig";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export class App extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ export class App extends Component {
         <Header/>
         <ItemUser user={this.state}></ItemUser>
         <UserForm onChange={this.handleChange} user={this.state}></UserForm>
+        <Footer/>
       </ThemeProvider>
     );
   }
