@@ -7,5 +7,5 @@
 html body #root{
     font-family: 'Arial', sans-serif;
     background-color: #dcd3ae;
-    height: 100vh;
+    /* height: 100vh; */
 }

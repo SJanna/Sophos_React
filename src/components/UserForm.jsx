@@ -33,7 +33,6 @@ export class UserForm extends Component {
     const { nombre, pais, email, telefono } = this.props.user;
     return (
       <div>
-        <div className="title-form">Nuevo Usuario</div>
         <form className="form" onSubmit={this.handleSubmit}>
           <FormControl fullWidth>
             <InputLabel>Nombre: </InputLabel>
