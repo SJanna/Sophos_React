@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import "./styles/UserForm.css";
-import { FormControl, InputLabel, Input, FormHelperText } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  Input,
+  FormHelperText,
+  OutlinedInput,
+  FilledInput,
+  TextField,
+  Button,
+  Box,
+} from "@mui/material";
 
 export class UserForm extends Component {
   handleChange = (e) => {
@@ -21,7 +31,7 @@ export class UserForm extends Component {
         <div className="title-form">Nuevo Usuario</div>
         <form className="form" onSubmit={this.handleSubmit}>
           <FormControl fullWidth>
-            <InputLabel>Nombre</InputLabel>
+            <InputLabel>Nombre: </InputLabel>
             <Input
               type="text"
               name="nombre"
@@ -29,37 +39,45 @@ export class UserForm extends Component {
               value={nombre}
             />
             <FormHelperText>
-              Aquí debes ingresar tu nombre y Apellido
+              Aquí debes ingresar tu nombre y apellido
             </FormHelperText>
           </FormControl>
           <FormControl fullWidth>
-            <InputLabel>Pais</InputLabel>
-            <Input
+            <InputLabel>Pais: </InputLabel>
+            <OutlinedInput
               type="text"
               name="pais"
               onChange={this.props.onChange}
               value={pais}
             />
+            <FormHelperText>
+              Aquí debes ingresar tu pais de origen
+            </FormHelperText>
           </FormControl>
           <FormControl fullWidth>
             <InputLabel>Correo Electrónico </InputLabel>
-            <Input
+            <FilledInput
               type="text"
               name="email"
               onChange={this.props.onChange}
               value={email}
             />
+            <FormHelperText>Aquí debes ingresar un email válido</FormHelperText>
           </FormControl>
           <FormControl fullWidth>
-            <InputLabel> Teléfono </InputLabel>
-            <Input
-              type="text"
+            <TextField
+              id="outlined-basic"
+              label="Teléfono"
+              helperText="Aquí debes ingresar tu número de teléfono"
+              variant="outlined"
               name="telefono"
               onChange={this.props.onChange}
               value={telefono}
             />
           </FormControl>
-          <button>Agregar</button>
+          <Box align="center">
+            <Button variant="outlined">Agregar</Button>
+          </Box>
         </form>
       </div>
     );
