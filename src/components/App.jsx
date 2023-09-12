@@ -5,6 +5,9 @@ import ItemUser from "./ItemUser";
 import UserForm from "./UserForm";
 import userList from "../data";
 import { Button, Box, ButtonGroup, Switch } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+import theme from "../themeConfig";
+
 
 export class App extends Component {
   constructor(props) {
@@ -26,10 +29,10 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      < ThemeProvider theme={theme}>
         <ItemUser user={this.state}></ItemUser>
         <UserForm onChange={this.handleChange} user={this.state}></UserForm>
-      </>
+      </ThemeProvider>
     );
   }
 }

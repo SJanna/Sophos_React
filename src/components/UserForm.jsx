@@ -84,7 +84,8 @@ export class UserForm extends Component {
             {this.state.loading && <CircularProgress />}
           </Box>
           <Box align="center">
-            <Button variant="outlined" onClick={()=>this.setState({loading: !this.state.loading})}>Agregar</Button>
+            <Button variant="contained" color="primary" onClick={()=>this.setState({loading: !this.state.loading})}>Agregar</Button>
+            <Button variant="contained" color="secondary" onClick={()=>this.setState({loading: !this.state.loading})}>Agregar</Button>
           </Box>
         </form>
       </div>
