@@ -6,6 +6,7 @@ import Form from "../pages/Form";
 import Layout from "../layout/Layout";
 import List from "../pages/List";
 import User from "../pages/User";
+import UserCountHook from "./UserCountHook";
 import {
   createBrowserRouter,
   Link,
@@ -13,9 +14,7 @@ import {
   RouterProvider,
   Routes,
 } from "react-router-dom";
-const router = createBrowserRouter([
-  { path: "*", Component: Root },
-]);
+const router = createBrowserRouter([{ path: "*", Component: Root }]);
 
 export default function App() {
   return <RouterProvider router={router} />;
@@ -23,15 +22,16 @@ export default function App() {
 
 function Root() {
   return (
-      <ThemeProvider theme={theme}>
-    <Routes>
-      <Route path="/" element={<Layout />}>
+    <ThemeProvider theme={theme}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="form" element={<Form />} />
           <Route path="list" element={<List />} />
-          <Route path="/user/:id" element={<User/>} />
-      </Route>
+          <Route path="user/:id" element={<User />} />
+        </Route>
+        <Route path="usercounter" element={<UserCountHook />} />
       </Routes>
-      </ThemeProvider>
+    </ThemeProvider>
   );
 }

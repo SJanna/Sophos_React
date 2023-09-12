@@ -14,26 +14,29 @@ import {
 } from "@mui/material";
 
 export class UserForm extends Component {
-
-    state = {
-        loading: false,
-    }
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
+  constructor(props) {
+    super(props);
+    console.log("Constructor");
+  }
+  componentDidMount() {
+    console.log("DidMount");
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("DidUpdate");
+    console.log({
+      prevProps: prevProps,
+      prevState: prevState,
     });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.onChange(this.state);
-  };
-
+  }
+  componentWillUnmount() {
+    console.log("WillUnmount");
+  }
   render() {
+    console.log("Render");
     const { nombre, pais, email, telefono } = this.props.user;
     return (
       <div>
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form className="form">
           <FormControl fullWidth>
             <InputLabel>Nombre: </InputLabel>
             <Input
@@ -79,13 +82,6 @@ export class UserForm extends Component {
               value={telefono}
             />
           </FormControl>
-          <Box align="center">
-            {this.state.loading && <CircularProgress />}
-          </Box>
-          <Box align="center">
-            <Button variant="contained" color="primary" onClick={()=>this.setState({loading: !this.state.loading})}>Agregar</Button>
-            <Button variant="contained" color="secondary" onClick={()=>this.setState({loading: !this.state.loading})}>Agregar</Button>
-          </Box>
         </form>
       </div>
     );
