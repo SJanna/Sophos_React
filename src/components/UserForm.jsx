@@ -10,9 +10,14 @@ import {
   TextField,
   Button,
   Box,
+  CircularProgress,
 } from "@mui/material";
 
 export class UserForm extends Component {
+
+    state = {
+        loading: false,
+    }
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -76,7 +81,10 @@ export class UserForm extends Component {
             />
           </FormControl>
           <Box align="center">
-            <Button variant="outlined">Agregar</Button>
+            {this.state.loading && <CircularProgress />}
+          </Box>
+          <Box align="center">
+            <Button variant="outlined" onClick={()=>this.setState({loading: !this.state.loading})}>Agregar</Button>
           </Box>
         </form>
       </div>
