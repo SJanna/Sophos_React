@@ -9,7 +9,7 @@ const containerStyles = {
     flexDirection: "column",
     justifyContent: "space-between",
     margin : "24px 8px",
-    height: "70vh",
+    height: "100%",
 }
 
 const Home = () => {

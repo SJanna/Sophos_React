@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const SingleUser = ({ name, picture, location, email, phone }) => {
+  console.log(name, picture, location, email, phone)
   return (
     <Card
       sx={{
@@ -28,21 +29,21 @@ const SingleUser = ({ name, picture, location, email, phone }) => {
           padding: "8px",
         }}
         component="img"
-        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        src={picture.large}
         title="Imagen de usuario"
       />
       <CardContent sx={{ flex: 2 }}>
         <Typography variant="body1">
-          <strong>Nombre: </strong> {nombre}
+          <strong>Nombre: </strong> {name.title} {name.first} {name.last}
         </Typography>
         <Typography variant="body1">
-          <strong>Pais: </strong> {pais}
+          <strong>Pais: </strong> {location.country}
         </Typography>
         <Typography variant="body1">
           <strong>Correo: </strong> {email}
         </Typography>
         <Typography variant="body1">
-          <strong>Teléfono: </strong> {telefono}
+          <strong>Teléfono: </strong> {phone}
         </Typography>
       </CardContent>
     </Card>
