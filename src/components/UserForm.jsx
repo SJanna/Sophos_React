@@ -29,7 +29,16 @@ const UserForm = (props) => {
       console.log(error);
     }
   };
-
+const handleEdit = async (e) => {
+    e.preventDefault();
+    console.log(props.user);
+    try {
+      const response = await axios.put(`http://localhost:3000/users/${props.user.id}`, props.user);
+      navigate("/list");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
@@ -77,9 +86,15 @@ const UserForm = (props) => {
           />
         </FormControl>
         <Box align="center">
-          <Button type="submit" variant="contained" color="success">
-            Enviar
-          </Button>
+          {props.isEdit ? (
+            <Button onClick={handleEdit} variant="contained" color="success">
+              Editar
+            </Button>
+          ) : (
+            <Button type="submit" variant="contained" color="success">
+              Crear
+            </Button>
+          )}
         </Box>
       </form>
     </div>

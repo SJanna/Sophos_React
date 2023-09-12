@@ -7,6 +7,8 @@ import Layout from "../layout/Layout";
 import List from "../pages/List";
 import User from "../pages/User";
 import UserCountHook from "./UserCountHook";
+import Edit from "../pages/Edit";
+
 import {
   createBrowserRouter,
   Route,
@@ -29,6 +31,7 @@ function Root() {
           <Route path="form" element={<Form />} />
           <Route path="list" element={<List />} />
           <Route path="user/:id" element={<User />} />
+          <Route exact path="edit/:id" element={<Edit />} />
         </Route>
         <Route path="usercounter" element={<UserCountHook />} />
       </Routes>

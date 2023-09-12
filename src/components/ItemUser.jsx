@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles/ItemUser.css";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-
+import { Card, CardContent, CardMedia, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 const ItemUser = (props) => {
-  const { nombre, pais, email, telefono } = props.user;
+  const { id, nombre, pais, email, telefono } = props.user;
   return (
     <Card
       sx={{
@@ -39,9 +39,9 @@ const ItemUser = (props) => {
             <strong>Teléfono: </strong> {telefono}
           </Typography>
         )}
+        <br />
+        {props.isEdit && <Button component={Link} to={`/edit/${id}`} variant="contained"> Editar </Button>}
       </CardContent>
-
-      {props.enableButton && <button> Haz Clic </button>}
     </Card>
   );
 };
