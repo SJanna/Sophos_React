@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar, Toolbar,IconButton, Container, Link } from '@mui/material'
-
+import {Link as RouterLink} from 'react-router-dom'
 
 const menuStyles = {
     display: 'flex',
@@ -15,13 +15,13 @@ const Header = () => {
             <IconButton edge="start">
                 <img height='30px' src='logo512.png' alt='logo'/>
             </IconButton>
-            <Link href="" color='inherit'>
+            <Link component={RouterLink} to="/" color='inherit'>
                 Inicio
             </Link>
-            <Link href="" color='inherit'>
+            <Link component={RouterLink} to="/form" color='inherit'>
                 Formulario
             </Link>
-            <Link href="" color='inherit'>
+            <Link component={RouterLink} to="/list" color='inherit'>
                 Lista
             </Link>
         </Toolbar>
