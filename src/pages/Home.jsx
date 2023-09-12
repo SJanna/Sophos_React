@@ -1,14 +1,8 @@
 import React from "react";
-import ItemUser from "../components/ItemUser";
+import UserList from "../components/UserList";
 import Title from "../components/Title";
 import { Box, Typography } from "@mui/material";
 
-const data = {
-  nombre: "Shalem",
-  pais: "Colombia",
-  email: "shalem@mail.com",
-  telefono: "3014072140",
-};
 
 const containerStyles = {
     display: "flex",
@@ -22,7 +16,7 @@ const Home = () => {
   return (
     <Box sx={containerStyles}>
       <Title text="Bienvenido a User Random" />
-      <ItemUser user={data} />
+      <UserList />
       <Typography variant="body2" align="center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, omnis
         rerum quam placeat delectus eius obcaecati modi quasi atque nam quos
