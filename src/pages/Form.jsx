@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import UserForm from "../components/UserForm";
 import ItemUser from "../components/ItemUser";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Title from "../components/Title";
 
 export class Form extends Component {
