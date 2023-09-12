@@ -8,7 +8,6 @@ const Footer = () => {
 const theme = useTheme();
 
 const footerStyles = {
-  position: "fixed",
   width: "100%",
   padding: "24px 0",
   backgroundColor: theme.palette.secondary.main,
