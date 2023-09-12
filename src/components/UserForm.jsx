@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/UserForm.css";
 import {
   FormControl,
@@ -8,13 +8,31 @@ import {
   OutlinedInput,
   FilledInput,
   TextField,
+  Button,
+  Box,
 } from "@mui/material";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const UserForm = (props) => {
   const { nombre, pais, email, telefono } = props.user;
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(props.user);
+    try {
+      const response = await axios.post("http://localhost:3000/users", props.user);
+      navigate("/list");
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <FormControl fullWidth>
           <InputLabel>Nombre: </InputLabel>
           <Input
@@ -58,6 +76,11 @@ const UserForm = (props) => {
             value={telefono}
           />
         </FormControl>
+        <Box align="center">
+          <Button type="submit" variant="contained" color="success">
+            Enviar
+          </Button>
+        </Box>
       </form>
     </div>
   );

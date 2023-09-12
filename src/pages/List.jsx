@@ -22,7 +22,7 @@ const List = () => {
   return (
     <>
       <Title text="Lista de usuarios" />
-      {users.map((item, index) => (
+      {users.toReversed().map((item, index) => (
         <ItemUser key={index} user={item} />
       ))}
     </>
