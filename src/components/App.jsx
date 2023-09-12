@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import theme from "../themeConfig";
 import Home from "../pages/Home";
@@ -9,7 +9,6 @@ import User from "../pages/User";
 import UserCountHook from "./UserCountHook";
 import {
   createBrowserRouter,
-  Link,
   Route,
   RouterProvider,
   Routes,
