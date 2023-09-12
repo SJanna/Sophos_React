@@ -4,11 +4,11 @@ import "./styles/ItemUser.css";
 export default class ItemUser extends React.Component {
   state = {};
   render() {
-    const { name, pais, email, telefono } = this.props.user;
+    const { nombre, pais, email, telefono } = this.props.user;
     return (
       <div className="details">
         <p>
-          <strong>Nombre: {name}</strong>
+          <strong>Nombre: {nombre}</strong>
         </p>
         <p>
           <strong>Pais: {pais}</strong>

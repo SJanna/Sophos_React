@@ -11,7 +11,10 @@ export class App extends Component {
     super(props);
 
     this.state = {
-      users: userList,
+      nombre: "Shalem",
+      pais: "Colombia",
+      email: "shalem@mail.com",
+      telefono: "3014072140",
     };
   }
 
@@ -24,26 +27,8 @@ export class App extends Component {
   render() {
     return (
       <>
-        <Title text="Lista de Usuarios" />
-        {this.state.users.map((user, index) => (
-          <ItemUser key={index} user={user} />
-        ))}
-        {/* <UserForm onChange={this.handleChange} user={this.state}/> */}
-        <Box align="center">
-          <Button color="secondary" variant="contained">
-            Cargar más
-          </Button>
-        </Box>
-        <Box align="center">
-          <ButtonGroup
-            variant="contained"
-            aria-label="outlined primary button group"
-          >
-            <Button color="primary">Anterior</Button>
-            <Button color="primary">Siguiente</Button>
-          </ButtonGroup>
-          <Switch></Switch>
-        </Box>
+        <ItemUser user={this.state}></ItemUser>
+        <UserForm onChange={this.handleChange} user={this.state}></UserForm>
       </>
     );
   }
