@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SingleUser from "./SingleUser";
-import { CircularProgress, Box, Typography } from "@mui/material";
+import UserListView from "../view/UserList";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -25,19 +24,8 @@ const UserList = () => {
     getUsers();
   }, []);
 
-  console.log("users----------------------------", users);
   return (
-    <div>
-      {loading && (
-        <Box align="center" height="100%" sx={{ display: "flex", justifyContent: "center" }}>
-          <CircularProgress />
-        </Box>
-      )}
-      {error && <Typography>{error}</Typography>}
-      {users.map((user) => (
-        <SingleUser key={user.login.uuid} {...user} />
-      ))}
-    </div>
+    <UserListView users={users} loading={loading} error={error}/>
   );
 };
 
