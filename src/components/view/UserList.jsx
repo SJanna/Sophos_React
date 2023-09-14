@@ -1,11 +1,12 @@
 import React from "react";
 import SingleUser from "../SingleUser";
-import { CircularProgress, Box, Typography, Button } from "@mui/material";
+import { CircularProgress, Box, Typography, Button, TextField } from "@mui/material";
 import Modal from "../Modal";
 
-const UserList = ({onLoad, users, loading, error}) => {
+const UserList = ({onLoad, onFilter, users, loading, error}) => {
   return (
     <>
+    <TextField label="Buscar" onChange={onFilter}/>
       {loading ? (
         <Box align="center" height="100%" sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />

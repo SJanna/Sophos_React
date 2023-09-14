@@ -7,6 +7,7 @@ const UserList = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [page, setPage] = useState(0);
+  const [filteredUsers, setFilteredUsers] = useState([]);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -17,6 +18,7 @@ const UserList = () => {
         );
         //apend users
         setUsers([...users, ...response.data.results]);
+        setFilteredUsers([...users, ...response.data.results]);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -30,8 +32,24 @@ const UserList = () => {
     setPage(page + 1);
   };
 
+  const handleFilter = (e) => {
+    const filtered = users.filter((user) => {
+      return (
+        user.name.first.toLowerCase().includes(e.target.value) ||
+        user.name.last.toLowerCase().includes(e.target.value)
+      );
+    });
+    setFilteredUsers(filtered);
+  };
+
   return (
-    <UserListView onLoad={handleLoadMore} users={users} loading={loading} error={error}/>
+    <UserListView
+      onLoad={handleLoadMore}
+      onFilter={handleFilter}
+      users={filteredUsers}
+      loading={loading}
+      error={error}
+    />
   );
 };
 
