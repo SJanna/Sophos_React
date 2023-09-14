@@ -1,9 +1,9 @@
 import React from "react";
-import SingleUser from "../components/SingleUser";
-import { CircularProgress, Box, Typography } from "@mui/material";
-import Modal from "../components/Modal";
+import SingleUser from "../SingleUser";
+import { CircularProgress, Box, Typography, Button } from "@mui/material";
+import Modal from "../Modal";
 
-const UserList = ({users, loading, error}) => {
+const UserList = ({onLoad, users, loading, error}) => {
   return (
     <>
       {loading ? (
@@ -15,6 +15,9 @@ const UserList = ({users, loading, error}) => {
       {users.map((user) => (
         <SingleUser key={user.login.uuid} {...user} />
       ))}
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Button onClick={onLoad}>Cargar más</Button>
+        </Box>
       </Box>
   )}
       {error && <Typography>{error}</Typography>}

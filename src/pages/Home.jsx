@@ -1,5 +1,5 @@
 import React from "react";
-import UserList from "../container/UserList";
+import UserList from "../components/container/UserList";
 import Title from "../components/Title";
 import { Box, Typography } from "@mui/material";
 
