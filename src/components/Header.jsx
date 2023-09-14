@@ -12,18 +12,18 @@ const Header = () => {
     <AppBar position="sticky" >
         <Container maxWidth="lg">
         <Toolbar sx={menuStyles}> 
-            <IconButton edge="start">
+            <IconButton component={RouterLink} to="/" onClick={()=> window.location.reload()}  edge="start">
                 <img height='30px' src={Logo} alt='logo'/>
             </IconButton>
-            <Link component={RouterLink} to="/" color='inherit'>
+            {/* <Link component={RouterLink} to="/" color='inherit'>
                 Inicio
-            </Link>
-            <Link component={RouterLink} to="/form" color='inherit'>
+            </Link> */}
+            {/* <Link component={RouterLink} to="/form" color='inherit'>
                 Formulario
             </Link>
             <Link component={RouterLink} to="/list" color='inherit'>
                 Lista
-            </Link>
+            </Link> */}
         </Toolbar>
         </Container>
     </AppBar>
